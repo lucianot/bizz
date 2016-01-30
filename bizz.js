@@ -6,7 +6,7 @@
   function define_Bizz() {
     var Bizz = {};
     Bizz.greet = function() {
-        alert("Hello from the " + name + " library.");
+      alert("yo!");
     }
     return Bizz;
   }
