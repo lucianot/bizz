@@ -31,7 +31,9 @@
         }
       }
 
+      alert(daysCount);
       removeHolidays = _weekdayHolidays(startDate, endDate, holidays);
+      alert(removeHolidays);
 
       return daysCount - removeHolidays;
     }
@@ -44,10 +46,10 @@
       while (i--) {
         currentDate = new Date(holidays[i]);
 
-        if (currentDate >= startDate) &&
-           (currentDate <= endDate) &&
-           (currentDate.getDay() != 6) &&
-           (currentDate.getDay() != 0) {
+        if (currentDate >= startDate &&
+            currentDate <= endDate &&
+            currentDate.getDay() != 6 &&
+            currentDate.getDay() != 0) {
            weekdayHolidays = weekdayHolidays + 1;
         }
       }
