@@ -45,6 +45,7 @@
 
       while (i--) {
         currentDate = new Date(holidays[i]);
+        alert("Current Date = " + currentDate);
 
         if (currentDate >= startDate &&
             currentDate <= endDate &&
