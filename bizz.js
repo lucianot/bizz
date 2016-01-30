@@ -21,16 +21,38 @@
     }
 
     function _bizDaysBetween(startDate, endDate) {
+      var holidays = ['2016-02-02', '2016-02-03'];
       var daysCount = 0;
+      var removeHolidays;
 
       for(var i = startDate; i <= endDate; i.setDate(i.getDate() + 1)) {
-        if (i.getDay() != 6 && i.getDay() != 0)
-        {
+        if (i.getDay() != 6 && i.getDay() != 0) {
           daysCount = daysCount + 1;
         }
       }
 
-      return daysCount;
+      removeHolidays = _weekdayHolidays(startDate, endDate, holidays);
+
+      return daysCount - removeHolidays;
+    }
+
+    function _weekdayHolidays(startDate, endDate, holidays) {
+      var weekdayHolidays = 0;
+      var i = holidays.length;
+      var currentDate;
+
+      while (i--) {
+        currentDate = new Date(holidays[i]);
+
+        if (currentDate >= startDate) &&
+           (currentDate <= endDate) &&
+           (currentDate.getDay() != 6) &&
+           (currentDate.getDay() != 0) {
+           weekdayHolidays = weekdayHolidays + 1;
+        }
+      }
+
+      return weekdayHolidays;
     }
 
     function _daysBetween(startDate, endDate) {
