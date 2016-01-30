@@ -17,7 +17,20 @@
     Bizz.daysBetween = function(startDate, endDate, holidays) {
       // TODO: check if startDate < endDate
 
-      return _daysBetween(startDate, endDate);
+      return _bizDaysBetween(startDate, endDate);
+    }
+
+    function _bizDaysBetween(startDate, endDate) {
+      var daysCount = 0;
+
+      for(var i = startDate; i <= endDate; i.setDate(i.getDate() + 1)) {
+        if (i.getDay() != 6 && i.getDay() != 0)
+        {
+          daysCount = daysCount + 1;
+        }
+      }
+
+      return daysCount;
     }
 
     function _daysBetween(startDate, endDate) {
