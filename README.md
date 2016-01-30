@@ -1,2 +1,2 @@
-# bizz
-Business days calculator
+Bizz
+A business days calculator

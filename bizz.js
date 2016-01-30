@@ -15,9 +15,11 @@
      * @return {Number} days
      */
     Bizz.daysBetween = function(startDate, endDate, holidays) {
+      // Check if dates are valid
       if (startDate >= endDate)
         return 0;
 
+      // Default to Brazilian bank holidays
       holidays = holidays || BRAZILIAN_HOLIDAYS;
 
       return _bizDaysBetween(startDate, endDate, holidays);
